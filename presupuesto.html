@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+  <html lang="es">
+  <head>
+    <!-- Configuración general -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Metadatos -->
+    <title>ECOPALLET | Presupuesto</title>
+    <meta name="description" content="Formulario de solicitud de presupuesto para soluciones de palets ecológicos y reciclados.">
+
+    <!-- Hoja de estilos -->
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body>
+    <!-- Cabecera -->
+    <header class="site-header">
+      <div class="container header-container">
+        <a href="index.html" class="brand">
+          <img src="img/logo-transparente.webp" alt="Logo ECOPALLET" class="brand-logo">
+        </a>
+
+        <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Abrir o cerrar menú">
+        <label for="nav-toggle" class="nav-toggle-label" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+
+        <nav class="main-nav" aria-label="Menú principal">
+          <ul class="nav-list">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="portafolio.html">Portfolio</a></li>
+            <li><a href="presupuesto.html" class="active">Presupuesto</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Contenido principal -->
+    <main class="page-main">
+      <section class="page-hero page-hero-light">
+        <div class="container">
+          <h1>Solicitud de presupuesto</h1>
+          <p>
+            Complete el siguiente formulario para recibir una propuesta adaptada a sus necesidades
+            de transporte, almacenaje o distribución.
+          </p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container form-wrapper">
+          <form class="contact-form" action="#" method="post">
+            <!-- Campo nombre -->
+            <div class="form-group">
+              <label for="nombre">Nombre</label>
+              <input type="text" id="nombre" name="nombre" required>
+            </div>
+
+            <!-- Campo email -->
+            <div class="form-group">
+              <label for="email">Correo electrónico</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+
+            <!-- Campo teléfono -->
+            <div class="form-group">
+              <label for="telefono">Teléfono</label>
+              <input type="tel" id="telefono" name="telefono" required>
+            </div>
+
+            <!-- Campo mensaje -->
+            <div class="form-group">
+              <label for="mensaje">Mensaje</label>
+              <textarea id="mensaje" name="mensaje" rows="6" required></textarea>
+            </div>
+
+            <!-- Checkbox obligatorio -->
+            <div class="checkbox-group">
+              <input type="checkbox" id="privacidad" name="privacidad" required>
+              <label for="privacidad">Acepto la política de privacidad</label>
+            </div>
+
+            <!-- Botón de envío -->
+            <button type="submit" class="btn">Enviar presupuesto</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- Pie de página -->
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <h3>ECOPALLET</h3>
+          <p>Calle del Ferrocarril, 25, Coslada, Madrid, España.</p>
+        </div>
+
+        <div>
+          <h3>Redes sociales</h3>
+          <ul class="social-list">
+            <li><a href="#"><img src="img/logo-facebook.svg" alt="Facebook"></a></li>
+            <li><a href="#"><img src="img/logo-instagram.svg" alt="Instagram"></a></li>
+            <li><a href="#"><img src="img/logo-youtube.svg" alt="YouTube"></a></li>
+            <li><a href="#"><img src="img/logo-linkedin.svg" alt="LinkedIn"></a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Aviso legal</h3>
+          <p>© 2026 ECOPALLET. Todos los derechos reservados. Sitio web informativo de carácter corporativo.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+  </html>

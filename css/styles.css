@@ -1,0 +1,545 @@
+/* ==============================
+    FUENTES TIPOGRÁFICAS
+    Se reutilizan las fuentes del proyecto original
+  ================================= */
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto-Regular.woff2") format("woff2"),
+    url("../fonts/Roboto-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto-Medium.woff2") format("woff2"),
+    url("../fonts/Roboto-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto-Bold.woff2") format("woff2"),
+    url("../fonts/Roboto-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ==============================
+    VARIABLES GENERALES
+    Máximo 3 colores principales:
+    verde, gris claro y negro
+  ================================= */
+:root {
+  --color-primary: #4bbe16;
+  --color-secondary: #efefef;
+  --color-dark: #111111;
+  --color-white: #ffffff;
+  --color-text: #1f1f1f;
+  --max-width: 1200px;
+  --radius: 18px;
+  --shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* ==============================
+    RESET GENERAL
+  ================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Ajuste general de imágenes */
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Estilo base del documento */
+body {
+  font-family: "Roboto", sans-serif;
+  color: var(--color-text);
+  background-color: var(--color-white);
+  line-height: 1.6;
+}
+
+/* ==============================
+    CLASES UTILITARIAS
+  ================================= */
+.container {
+  width: min(90%, var(--max-width));
+  margin: 0 auto;
+}
+
+.section {
+  padding: 5rem 0;
+}
+
+.section-alt {
+  background-color: var(--color-secondary);
+}
+
+.section-heading {
+  max-width: 800px;
+  margin-bottom: 2rem;
+}
+
+.section-heading.centered {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-heading h2,
+.page-hero h1,
+.contact-grid h2 {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1.15;
+  margin-bottom: 1rem;
+}
+
+.img-portada {
+  width: 100%;
+  max-width: 1920px;
+  height: 700px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Botón principal reutilizable */
+.btn {
+  display: inline-block;
+  background-color: var(--color-primary);
+  color: var(--color-dark);
+  text-decoration: none;
+  border: 0;
+  border-radius: 12px;
+  padding: 0.95rem 1.5rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.btn:hover {
+  background-color: var(--color-white);
+  box-shadow: var(--shadow);
+}
+
+/* ==============================
+    CABECERA Y NAVEGACIÓN
+  ================================= */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--color-white);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  margin: 0;
+}
+
+.header-container {
+  min-height: 88px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.brand-logo {
+  width: 220px;
+}
+
+.nav-toggle {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.nav-toggle-label {
+  display: none;
+  width: 42px;
+  height: 42px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 6px;
+  background-color: var(--color-white);
+  border: 2px solid var(--color-dark);
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.nav-toggle-label span {
+  display: block;
+  width: 24px;
+  height: 3px;
+  background-color: var(--color-dark);
+  border-radius: 999px;
+  transition: 0.25s ease;
+}
+
+.main-nav {
+  margin-left: auto;
+}
+
+/* Menú principal horizontal */
+.nav-list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Enlaces del menú */
+.nav-list a {
+  text-decoration: none;
+  color: var(--color-dark);
+  font-weight: 500;
+  padding: 0.7rem 1rem;
+  border-radius: 10px;
+  transition: 0.25s ease;
+}
+
+/* Enlace activo y efecto hover */
+.nav-list a:hover,
+.nav-list a.active {
+  background-color: var(--color-primary);
+  color: var(--color-dark);
+}
+
+/* ==============================
+    HERO DE LA PÁGINA PRINCIPAL
+  ================================= */
+.hero {
+  position: relative;
+  min-height: 78vh;
+}
+
+.hero-media img {
+  width: 100%;
+  min-height: 78vh;
+  object-fit: cover;
+}
+
+/* Capa oscura para mejorar contraste del texto */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.68), rgba(0, 0, 0, 0.28));
+  display: flex;
+  align-items: center;
+}
+
+.hero-content {
+  color: var(--color-white);
+  max-width: 1000px;
+}
+
+.hero-kicker {
+  color: var(--color-primary);
+  font-weight: 700;
+  margin-bottom: 1rem;
+  font-size: clamp(1.3rem, 2.3vw, 1.5rem);
+}
+
+.hero h1 {
+  font-size: clamp(2.5rem, 6vw, 4.8rem);
+  line-height: 1.05;
+  margin-bottom: 1rem;
+}
+
+.hero h1 span {
+  color: var(--color-primary);
+}
+
+.hero-text {
+  font-size: 1.1rem;
+  max-width: 620px;
+  margin-bottom: 1.5rem;
+}
+
+/* ==============================
+     ESTRUCTURAS EN GRID
+  ================================= */
+.intro-grid,
+.about-grid,
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+/* Imágenes con bordes redondeados */
+.intro-image img,
+.about-image img,
+.map-image {
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.map-image {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+/* Tarjetas de servicios */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.3rem;
+}
+
+.card,
+.info-card,
+.contact-form,
+.portfolio-card {
+  background-color: var(--color-white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.card,
+.info-card {
+  padding: 1.3rem;
+}
+
+.card h3 {
+  margin-bottom: 0.8rem;
+  font-size: 1.25rem;
+}
+
+/* ==============================
+     PÁGINAS INTERNAS
+  ================================= */
+.page-main {
+  min-height: 70vh;
+}
+
+.page-hero {
+  padding: 5rem 0 3rem;
+}
+
+.page-hero-light {
+  background-color: var(--color-secondary);
+}
+
+/* Fondo visual para la cabecera de contacto */
+.contact-hero {
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.48), rgba(0, 0, 0, 0.48)),
+    url("../img/background_contacto.webp") center/cover no-repeat;
+  color: var(--color-white);
+}
+
+/* ==============================
+     GALERÍA PORTFOLIO
+  ================================= */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.portfolio-card {
+  overflow: hidden;
+}
+
+.portfolio-card img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+}
+
+.portfolio-body {
+  padding: 1.25rem;
+}
+
+.portfolio-body h2 {
+  font-size: 1.2rem;
+  margin-bottom: 0.75rem;
+}
+
+/* ==============================
+     FORMULARIO DE PRESUPUESTO
+  ================================= */
+.form-wrapper {
+  max-width: 760px;
+}
+
+.contact-form {
+  padding: 2rem;
+}
+
+.form-group {
+  margin-bottom: 1.2rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.45rem;
+  font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.95rem 1rem;
+  border: 1px solid #cfcfcf;
+  border-radius: 12px;
+  font: inherit;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 150px;
+}
+
+/* Bloque del checkbox obligatorio */
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.4rem;
+}
+
+/* ==============================
+     PIE DE PÁGINA
+  ================================= */
+.site-footer {
+  background-color: var(--color-dark);
+  color: var(--color-white);
+  padding: 3rem 0;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1.2fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.footer-grid h3 {
+  margin-bottom: 0.75rem;
+}
+
+/* Lista de iconos sociales */
+.social-list {
+  list-style: none;
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.social-list img {
+  width: 34px;
+  height: 34px;
+}
+
+/* ==============================
+     DISEÑO RESPONSIVE
+  ================================= */
+@media (max-width: 900px) {
+  .header-container {
+    min-height: auto;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0;
+    gap: 1rem;
+  }
+
+  .brand {
+    grid-column: 1;
+  }
+
+  .nav-toggle-label {
+    display: inline-flex;
+    grid-column: 2;
+    justify-self: end;
+  }
+
+  .main-nav {
+    grid-column: 1 / -1;
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .nav-list {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+    padding-top: 0.5rem;
+  }
+
+  .nav-list a {
+    display: block;
+    text-align: center;
+  }
+
+  .nav-toggle:checked + .nav-toggle-label + .main-nav .nav-list {
+    display: flex;
+  }
+
+  .nav-toggle:checked + .nav-toggle-label span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .nav-toggle:checked + .nav-toggle-label span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .nav-toggle:checked + .nav-toggle-label span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .intro-grid,
+  .about-grid,
+  .contact-grid,
+  .footer-grid,
+  .cards-grid,
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero,
+  .hero-media img {
+    min-height: 70vh;
+  }
+
+  .brand-logo {
+    width: 190px;
+  }
+}
+
+@media (max-width: 600px) {
+  .section {
+    padding: 4rem 0;
+  }
+
+  .page-hero {
+    padding: 4rem 0 2rem;
+  }
+
+  .hero-content {
+    text-align: center;
+  }
+
+  .checkbox-group {
+    align-items: flex-start;
+  }
+
+  .contact-form {
+    padding: 1.4rem;
+  }
+}
